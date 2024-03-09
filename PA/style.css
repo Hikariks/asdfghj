@@ -1,0 +1,198 @@
+:root {
+  --mc-environment-unlock_icon_clip-path: polygon(0.000% 41.67%, 0.000% 91.67%, 66.67% 91.67%, 66.67% 41.67%, 58.33% 41.67%, 58.33% 25.00%, 91.67% 25.00%, 91.67% 41.67%, 100.0% 41.67%, 100.0% 25.00%, 91.67% 25.00%, 91.67% 16.67%, 58.33% 16.67%, 58.33% 25.00%, 50.00% 25.00%, 50.00% 41.67%, 37.50% 41.67%, 37.50% 62.50%, 29.17% 62.50%, 29.17% 70.83%, 37.50% 70.83%, 37.50% 50.00%, 58.33% 50.00%, 58.33% 83.33%, 8.333% 83.33%, 8.333% 50.00%, 37.50% 50.00%, 37.50% 41.67%);
+  --mc-environment-lock_icon_clip-path: polygon(0.000% 41.67%, 0.000% 91.67%, 66.67% 91.67%, 66.67% 41.67%, 58.33% 41.67%, 58.33% 25.00%, 50.00% 25.00%, 50.00% 16.67%, 16.67% 16.67%, 16.67% 25.00%, 8.333% 25.00%, 8.333% 41.67%, 16.67% 41.67%, 16.67% 25.00%, 50.00% 25.00%, 50.00% 41.67%, 37.50% 41.67%, 37.50% 62.50%, 29.17% 62.50%, 29.17% 70.83%, 37.50% 70.83%, 37.50% 50.00%, 58.33% 50.00%, 58.33% 83.33%, 8.333% 83.33%, 8.333% 50.00%, 37.50% 50.00%, 37.50% 41.67%);
+  --mc-environment-arrow__down_clip-path: polygon(0% 0%, 0% 25%, 14.286% 25%, 14.286% 50%, 28.572% 50%, 28.572% 75%, 42.858% 75%, 42.858% 100%, 57.142% 100%, 57.142% 75%, 71.428% 75%, 71.428% 50%, 85.714% 50%, 85.714% 25%, 100% 25%, 100% 0%, 85.714% 0%, 85.714% 25%, 71.428% 25%, 71.428% 50%, 57.142% 50%, 57.142% 75%, 42.858% 75%, 42.858% 50%, 28.572% 50%, 28.572% 25%, 14.286% 25%, 14.286% 0%);
+}
+
+@font-face {
+  font-family: MinecraftTen;
+  src: url(src/MinecraftTen.woff);
+}
+
+.intro h2{
+  font-family:MinecraftTen;
+  text-align:center;
+  font-size:32px;
+}
+.intro p{
+  text-align:center;
+  max-width: 492px;
+  margin:auto;
+}
+
+.cards{
+  display:flex;
+  gap:24px;
+  justify-content: center;
+  width: 100%;
+  flex: 0 336px;
+  
+}
+.card{
+  flex: 0 336px;
+
+
+}
+.card img{
+  max-width: 100%;
+  height: auto;
+}
+.card-box{
+  border:16px solid;
+  padding:24px 17px;
+  height:calc(100% - 180px);
+  position: relative;
+}
+
+#Online {
+  border-color: #8f6448;
+}
+
+#Realms {
+  border-color:#6345BD;
+}
+
+#CO-OP {
+  border-color:#006CEF;
+}
+
+.secondary{
+  border-top: 1px solid ;
+}
+
+.tag{
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  background: #EDE5E2;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.3);
+  gap:16px;
+  color: #3D3938;
+  display: inline-block;
+  padding: 0 4px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.card-head-public,  .card-head-private{
+  font-size: .875rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  position: absolute;
+  margin-top: 3px;
+  right: 0;
+  top: 3px;
+  letter-spacing: .04em;
+}
+
+.card-head-public::after {
+clip-path: var(--mc-environment-unlock_icon_clip-path);
+aspect-ratio: 1 / 1;
+background-color: #262423;
+display: inline-block;
+content: '';
+vertical-align: bottom;
+width: 24px;
+margin: 0 16px 0 8px;
+}
+
+.card-head-private::after {
+clip-path: var(--mc-environment-lock_icon_clip-path);
+aspect-ratio: 1 / 1;
+background-color: #262423;
+display: inline-block;
+content: '';
+vertical-align: bottom;
+width: 24px;
+margin: 0 16px 0 8px;
+}
+
+.card-head-private::after {
+clip-path: var(--mc-environment-lock_icon_clip-path);
+aspect-ratio: 1 / 1;
+background-color: #262423;
+display: inline-block;
+content: '';
+vertical-align: bottom;
+width: 24px;
+margin: 0 20px 0 12px;
+}
+
+
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary{
+  position: relative;
+}
+h5::after {
+    aspect-ratio: 14 / 8;
+    background-color: #3D3938;
+    display: block;
+    content: '';
+    width: 14px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    clip-path: var(--mc-environment-arrow__down_clip-path);
+}
+
+details[open] summary h5::after{
+    transform: translateY(-50%) rotate(180deg);
+} 
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #171615;
+  padding: 10px 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.navigation ul {
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navigation li {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  max-width: 100px;
+}
+
+.navigation button {
+  background-color: #5cb85c; 
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
+
+.navigation img{
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+}
