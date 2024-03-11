@@ -1,0 +1,48 @@
+<style>
+  .blue-rectangle{
+    width: 100px; 
+    height: 100px;
+    background-color: blue;
+  }
+  .all-contain{
+    display: flex;
+  }
+  .container-left{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 300px;
+      background-color: skyblue; 
+      flex-wrap: wrap;
+  }
+  .container-right{
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 300px;
+      background-color: skyblue; 
+      flex-wrap: wrap;
+  }
+  .container-middle{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 300px;
+      background-color: skyblue; 
+      flex-wrap: wrap;
+  }
+
+</style>
+<div class="all-contain">
+  <div class='container-left'>
+    <div class="blue-rectangle"></div>
+  </div>
+  <div class="container-middle">
+  </div>
+  <div class='container-right'>
+    <div class="blue-rectangle"></div>
+  </div>
+</div>
+
+

@@ -15,6 +15,7 @@
   font-size:32px;
 }
 .intro p{
+  margin: 0;
   text-align:center;
   max-width: 492px;
   margin:auto;
@@ -151,8 +152,9 @@ body {
 }
 
 .navigation {
+  flex-wrap: wrap;
   width: 100%;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   background-color: #171615;
@@ -163,20 +165,21 @@ body {
 
 .navigation ul {
   justify-content: center;
-  list-style-type: none;
-  margin: 0;
   padding: 0;
   display: flex;
   gap: 20px;
 }
 
 .navigation li {
+  font-size: smaller;
   display: flex;
   color: white;
   font-weight: bold;
   cursor: pointer;
   justify-content: center;
   max-width: 100px;
+  width: 70%;
+  margin-left: 5px;
 }
 
 .navigation button {
@@ -184,7 +187,6 @@ body {
   color: white;
   padding: 10px 20px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
@@ -192,7 +194,13 @@ body {
 }
 
 .navigation img{
-  max-height: 50px;
-  display: flex;
   justify-content: center;
+  align-items: center;
+  width: 10%;
+  flex-grow: 1;
+  display: inline-flex;
+  max-width: 175px;
+  height: 40px;
+  margin: 20px auto;
+  position: absolute;
 }
