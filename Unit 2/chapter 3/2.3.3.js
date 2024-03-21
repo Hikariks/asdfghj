@@ -1,16 +1,15 @@
 const prompt = require('prompt-sync')()
-function readNumber(){
-  userInput = prompt('输入一个值');
-  while (true){
-    if (userInput === null || userInput.trim() === "CANCEL") {
-      return null;
-  }
-  if (!isNaN(userInput) && !isNaN(parseFloat(userInput))) {
-      return Number(userInput);
-  }
-  if (typeof userInput == String){
-    
+function readNumber() {
+  while (true) {
+      let userInput = prompt("Please enter a number:");
+      if (userInput == 'CANCEL') {
+          return null;
+      }
+      let number = Number(userInput);
+      if (!isNaN(number)) {
+          return number;
+      }
   }
 }
-}
-console.log(readNumber());
+let number = readNumber();
+console.log(number);
