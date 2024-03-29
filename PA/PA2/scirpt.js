@@ -1,3 +1,4 @@
+let score = 0
 const screenElement = document.createElement('div')
 screenElement.style.cssText = `
   position: relative;
@@ -28,12 +29,25 @@ document.addEventListener('keydown', (event) => {
   const letterElements = document.querySelectorAll('.letter')
   for (let letterElement of letterElements) {
     if (pressedKey === letterElement.textContent) {
+      scoreElement.textContent = `SCORE: ${++score}`
       letterElement.style.color = 'pink'
       setTimeout(()=>screenElement.removeChild(letterElement),200)
       return
     }
   }
 })
+
+const scoreElement = document.createElement('div')
+scoreElement.style.cssText = `font-size: 32px;`
+screenElement.appendChild(scoreElement)
+screenElement.style.cssText = `
+display: flex;
+justify-content: center;
+align-items: center;`
+scoreElement.style.color = 'blue'
+
+
+
 
 async function startGame() {
   await new Promise(resolve => {
