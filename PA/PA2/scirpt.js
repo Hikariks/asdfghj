@@ -34,6 +34,12 @@ document.addEventListener('keydown', (event) => {
       setTimeout(()=>screenElement.removeChild(letterElement),200)
       return
     }
+    else{
+      scoreElement.textContent = `SCORE: ${--score}`
+      letterElement.style.color = 'red'
+      setTimeout(()=>screenElement.removeChild(letterElement),200)
+      return
+    }
   }
 })
 
@@ -46,6 +52,14 @@ justify-content: center;
 align-items: center;`
 scoreElement.style.color = 'blue'
 
+// const duration = 1000 * 30  // 30s
+
+// function extractTime(time) {
+//   // ...
+// }
+
+// let [m, s, ms] = extractTime(duration)
+// // ...
 
 
 
@@ -54,6 +68,20 @@ async function startGame() {
     document.addEventListener('keydown', resolve)
   })
   createLetter()
+  // let timerId = startTimer()
+  // let createLetterId = createLetter()
+  // document.addEventListener('keydown', updateScore)
+
+  // await new Promise(resolve => {
+  //   setTimeout(resolve, duration)
+  // })
+
+  // clearInterval(timerId)
+  // clearInterval(createLetterId)
+  // document.removeEventListener('keydown', updateScore)
+  // document.querySelectorAll('.letter').forEach(x => screenElement.removeChild(x))
 }
+
+
 
 startGame()
