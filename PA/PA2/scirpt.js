@@ -6,6 +6,16 @@ screenElement.style.cssText = `
   height: 100vh;`
 document.body.appendChild(screenElement)
 
+const scoreElement = document.createElement('div')
+scoreElement.textContent = `Your Score: ${score}`
+scoreElement.style.cssText = `font-size: 32px;`
+screenElement.appendChild(scoreElement)
+screenElement.style.cssText = `
+display: flex;
+justify-content: center;
+align-items: center;`
+scoreElement.style.color = 'blue'
+
 function createLetter(){
   setInterval(() => {
     const letterElement = document.createElement('div')// Create Dom node for letter element
@@ -43,45 +53,12 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
-const scoreElement = document.createElement('div')
-scoreElement.style.cssText = `font-size: 32px;`
-screenElement.appendChild(scoreElement)
-screenElement.style.cssText = `
-display: flex;
-justify-content: center;
-align-items: center;`
-scoreElement.style.color = 'blue'
-
-// const duration = 1000 * 30  // 30s
-
-// function extractTime(time) {
-//   // ...
-// }
-
-// let [m, s, ms] = extractTime(duration)
-// // ...
-
-
-
 async function startGame() {
   await new Promise(resolve => {
     document.addEventListener('keydown', resolve)
   })
   createLetter()
-  // let timerId = startTimer()
-  // let createLetterId = createLetter()
-  // document.addEventListener('keydown', updateScore)
-
-  // await new Promise(resolve => {
-  //   setTimeout(resolve, duration)
-  // })
-
-  // clearInterval(timerId)
-  // clearInterval(createLetterId)
-  // document.removeEventListener('keydown', updateScore)
-  // document.querySelectorAll('.letter').forEach(x => screenElement.removeChild(x))
 }
-
 
 
 startGame()
